@@ -13,9 +13,11 @@ namespace DevCard_MVC.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "این فیلد اجباری می باشد")]
-        [EmailAddress(ErrorMessage = "ایمیل وارد شده صحیح نمی باشد")]
+        //[EmailAddress(ErrorMessage = "ایمیل وارد شده صحیح نمی باشد")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "این فیلد اجباری می باشد")]
         public string Service { get; set; }
+        [Required(ErrorMessage = "این فیلد اجباری می باشد")]
         public string Message { get; set; }
     }
 }

@@ -39,9 +39,15 @@ namespace DevCard_MVC.Controllers
         //}
 
         [HttpPost]
-        public JsonResult Contact(Contact contact)
+        public IActionResult Contact(Contact contact)
         {
-            return Json(Ok());
+            if (!ModelState.IsValid)
+            {
+                ViewBag.eror = "مشکل در فرستادن پیام های شما";
+                return View(contact);
+            }
+            ViewBag.success = "پیام شما با موفقیت فرستاده شد با تشکر.";
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
